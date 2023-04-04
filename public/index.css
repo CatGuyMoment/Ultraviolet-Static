@@ -3,7 +3,7 @@
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   margin: 0;
-  background: #a45da4;
+  background: #4b106b;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -101,7 +101,7 @@ footer a:hover {
 
 .desc p {
   width: 560px;
-  color: rgba(253, 253, 253, 0.514);
+  color: rgb(128, 27, 183);
 }
 
 #uv-address {
@@ -109,19 +109,21 @@ footer a:hover {
   font-family: inherit;
   padding: 0px 17px;
   height: 48px;
-  border: 1px solid rgb(255, 255, 255, 0.2);
-  color: var(--text-color);
+  border: 1px solid rgb(39, 8, 56);
+  color: #270838;
   border-radius: 3px;
   outline: none;
   width: 350px;
   margin-top: 5px;
   border-radius: 50px;
-  color: #fff;
+  color: #cf25ff;
   transition: border-radius 0.1s;
 }
-
+#uv-address::placeholder {
+  color: #ff6500;
+}
 #uv-address:focus {
-  border: 1px solid rgba(253, 253, 253, 0.514);
+  border: 1px solid rgb(178, 37, 255);
   border-radius: 6px;
 }
 
