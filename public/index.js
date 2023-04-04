@@ -34,3 +34,14 @@ form.addEventListener("submit", async (event) => {
   const url = search(address.value, searchEngine.value);
   location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
 });
+
+fetch("splashes.json")
+  .then(response => response.json())
+  .then(data => {
+    const splashes = data.splashes;
+    const splash = splashes[Math.floor(Math.random() * splashes.length)];
+    document.getElementById("desc").innerHTML = splash;
+  })
+  .catch(error => {
+    console.error("Error loading splashes:", error);
+  });
