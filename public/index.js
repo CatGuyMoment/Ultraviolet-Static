@@ -35,13 +35,21 @@ form.addEventListener("submit", async (event) => {
   location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
 });
 
-fetch("splashes.json")
-  .then(response => response.json())
-  .then(data => {
-    const splashes = data.splashes;
-    const splash = splashes[Math.floor(Math.random() * splashes.length)];
-    document.getElementById("desc").innerHTML = splash;
-  })
-  .catch(error => {
-    console.error("Error loading splashes:", error);
-  });
+function loadSplash() {
+  fetch('splashes.json')
+    .then(response => response.json())
+    .then(data => {
+      const splashes = data.splashes;
+      const randomIndex = Math.floor(Math.random() * splashes.length);
+      const splash = splashes[randomIndex];
+      const desc = document.querySelector('.desc p');
+      desc.textContent = splash;
+    })
+    .catch(error => {
+      console.error('Failed to load splashes:', error);
+    });
+}
+
+window.addEventListener('load', function() {
+  loadSplash();
+});
