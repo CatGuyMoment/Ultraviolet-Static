@@ -3,10 +3,11 @@
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   margin: 0;
-  background: linear-gradient(to bottom, #4b106b 30% , #ff6500 110%);
+  background: linear-gradient(to bottom, #4b106b, #ff6500);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+ overflow: hidden;
 }
 
 .fa-magnifying-glass {
@@ -31,6 +32,19 @@ body {
 #uv-error {
   color: #ff6666 !important;
   white-space: pre-wrap;
+}
+
+#scroll-down {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+#orange-page {
+  height: 100vh;
+  background-color: orange;
 }
 
 #uv-error-code {
@@ -101,7 +115,7 @@ footer a:hover {
 
 .desc p {
   width: 560px;
-  color: rgb(255 255 255);
+  color: rgb(128, 27, 183);
 }
 
 #uv-address {
@@ -166,4 +180,44 @@ footer a:hover {
 
 .credit input:checked ~ pre {
   display: block;
+}
+
+  #orange-page {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: orange;
+        top: 100%;
+        transition: top 1s ease;
+      }
+      #orange-page.active {
+        top: 0;
+}
+  body {
+    overflow: hidden;
+  }
+
+  #orange-page {
+    height: 100vh;
+    background-color: orange;
+    display: none;
+  }
+
+
+  #go-up {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+#go-down {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+
 }
